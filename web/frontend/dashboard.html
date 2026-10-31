@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEPi Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard-layout">
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div>
+
+    <div class="brand-box">
+      <h2 class="sidebar-title" id="sidebarTitle">CEPi</h2>
+      <p class="sidebar-subtitle" id="sidebarSubtitle">Community Emergency Platform</p>
+    </div>
+
+    <div class="sidebar-user-card">
+      <div class="mini-avatar" id="miniAvatar">U</div>
+      <div>
+        <h3 id="sidebarUserName">Welcome</h3>
+        <p id="sidebarUserEmail">Loading...</p>
+      </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- Language Selector -->
+    <!-- ============================= -->
+
+    <div class="language-box">
+
+      <label for="languageSelect" id="languageLabel">
+        🌐 <strong>Language</strong>
+      </label>
+
+      <select id="languageSelect">
+
+        <option value="en">English</option>
+
+        <option value="hi">हिन्दी</option>
+
+        <option value="te">తెలుగు</option>
+
+        <option value="ur">اردو</option>
+
+        <option value="ta">தமிழ்</option>
+
+      </select>
+
+    </div>
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-nav">
+
+      <button class="nav-btn active" id="dashboardBtn">
+        Dashboard
+      </button>
+
+      <button class="nav-btn" id="profileBtn">
+        Profile
+      </button>
+
+      <button class="nav-btn" id="societiesBtn">
+        Societies
+      </button>
+
+      <button class="nav-btn" id="blocksBtn">
+        Blocks
+      </button>
+
+      <button class="nav-btn" id="flatsBtn">
+        Flats
+      </button>
+
+      <button class="nav-btn" id="residentMappingBtn">
+        Resident Mapping
+      </button>
+
+      <button class="nav-btn" id="emergencyContactsBtn">
+        Emergency Contacts
+      </button>
+
+      <button class="nav-btn" id="contactVerificationBtn">
+        Contact Verification
+      </button>
+
+      <button class="nav-btn" id="alertsBtn">
+        Alerts / SOS
+      </button>
+
+      <button class="nav-btn" id="roleAccessBtn">
+        Role & Access
+      </button>
+
+      <button id="sosBtn" class="nav-btn">
+        🚨 SOS Monitoring
+      </button>
+
+      <button id="incidentBtn" class="nav-btn">
+        🚑 Incident Management
+      </button>
+
+      <button id="escalationBtn" class="nav-btn">
+        📢 Escalation Status
+      </button>
+
+      <button id="volunteerBtn" class="nav-btn">
+        🟢 Volunteer Response
+      </button>
+
+      <button class="nav-btn logout-btn" id="logoutBtn">
+        Logout
+      </button>
+
+    </nav>
+
+  </div>
+
+  <div class="sidebar-footer">
+    <p id="sidebarFooterText">Safe community management</p>
+  </div>
+
+</aside>
+
+    <main class="main-content">
+
+  <header class="topbar">
+
+    <div>
+
+      <h1 id="pageTitle">
+        Dashboard
+      </h1>
+
+      <p
+        class="page-subtitle"
+        id="pageSubtitle"
+      >
+        Welcome to your community emergency dashboard
+      </p>
+
+    </div>
+
+  </header>
+
+      <!-- ===================================================== -->
+<!-- DASHBOARD SECTION -->
+<!-- ===================================================== -->
+<section id="dashboardSection" class="page-section">
+
+  <div class="profile-summary-grid">
+
+    <!-- Logged In User -->
+    <div class="profile-summary-item">
+
+      <span
+        class="profile-summary-label"
+        id="loggedInUserLabel">
+        Logged-in User
+      </span>
+
+      <span
+        class="profile-summary-value"
+        id="dashboardUserEmail">
+        Email: -
+      </span>
+
+      <span
+        class="profile-summary-value"
+        id="dashboardUserId">
+        User ID: -
+      </span>
+
+    </div>
+
+    <!-- Community Access -->
+    <div class="profile-summary-item">
+
+      <span
+        class="profile-summary-label"
+        id="communityAccessLabel">
+        Community Access
+      </span>
+
+      <span
+        class="profile-summary-value"
+        id="communityAccessValue">
+        View your role-based profile, societies, blocks, flats and emergency-related modules from one place.
+      </span>
+
+    </div>
+
+    <!-- Modules -->
+    <div class="profile-summary-item">
+
+      <span
+        class="profile-summary-label"
+        id="modulesProgressLabel">
+        Modules in Progress
+      </span>
+
+      <span
+        class="profile-summary-value"
+        id="modulesProgressValue">
+        Resident-flat mapping, emergency contacts, OTP verification, alerts and role-based permissions.
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- ================= Dashboard Cards ================= -->
+
+  <div class="summary-card">
+    <h3 id="totalSocietiesTitle">Total Societies</h3>
+    <p id="totalSocietiesCard">0</p>
+  </div>
+
+  <div class="summary-card">
+    <h3 id="totalBlocksTitle">Total Blocks</h3>
+    <p id="totalBlocksCard">0</p>
+  </div>
+
+  <div class="summary-card">
+    <h3 id="totalFlatsTitle">Total Flats</h3>
+    <p id="totalFlatsCard">0</p>
+  </div>
+
+  <div class="summary-card">
+    <h3 id="residentMappingsTitle">Resident Mappings</h3>
+    <p id="totalResidentMappingsCard">0</p>
+  </div>
+
+  <div class="summary-card">
+    <h3 id="emergencyContactsTitle">Emergency Contacts</h3>
+    <p id="totalEmergencyContactsCard">0</p>
+  </div>
+
+  <div class="summary-card">
+    <h3 id="emergencyAlertsTitle">Emergency Alerts</h3>
+    <p id="totalEmergencyAlertsCard">0</p>
+  </div>
+
+  <div class="summary-card">
+    <h3 id="verifiedContactsTitle">Verified Contacts</h3>
+    <p id="verifiedContactsCard">0</p>
+  </div>
+</section>
+
+      <!-- ===================================================== -->
+<!-- PROFILE SECTION -->
+<!-- ===================================================== -->
+
+<section id="profileSection" class="hidden">
+
+  <!-- Profile Header -->
+
+  <div class="profile-header-card">
+
+    <div
+      class="profile-avatar"
+      id="profileAvatar">
+      U
+    </div>
+
+    <div class="profile-header-text">
+
+      <h2 id="profileFullName">
+        User Profile
+      </h2>
+
+      <p id="profileHeaderEmail">
+        -
+      </p>
+
+      <span
+        class="role-badge"
+        id="profileRoleBadge">
+        Role
+      </span>
+
+    </div>
+
+  </div>
+
+  <!-- Profile Details -->
+
+  <div class="profile-card">
+
+    <div class="profile-card-top">
+
+      <h2 id="profileDetailsHeading">
+        Profile Details
+      </h2>
+
+      <button
+        id="editProfileBtn"
+        class="small-btn">
+
+        Edit Profile
+
+      </button>
+
+    </div>
+
+    <div class="profile-grid">
+
+      <div class="profile-item">
+        <span id="firstNameLabel">First Name</span>
+        <strong id="profileFirstName">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="lastNameLabel">Last Name</span>
+        <strong id="profileLastName">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="emailLabel">Email</span>
+        <strong id="profileEmail">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="phoneLabel">Phone</span>
+        <strong id="profilePhone">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="roleLabel">Role</span>
+        <strong id="profileRole">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="societyLabel">Society</span>
+        <strong id="profileSociety">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="blockLabel">Block</span>
+        <strong id="profileBlock">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="flatLabel">Flat</span>
+        <strong id="profileFlat">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="employeeIdLabel">Employee ID</span>
+        <strong id="profileEmployeeId">-</strong>
+      </div>
+
+      <div class="profile-item">
+        <span id="shiftDetailsLabel">Shift Details</span>
+        <strong id="profileShift">-</strong>
+      </div>
+
+    </div>
+
+    <p id="profileMessage" class="message"></p>
+
+  </div>
+
+  <!-- Edit Profile -->
+
+  <div id="editProfileCard" class="profile-card hidden">
+
+    <div class="profile-card-top">
+
+      <h2 id="editProfileHeading">
+        Edit Profile
+      </h2>
+
+    </div>
+
+    <form
+      id="editProfileForm"
+      class="edit-profile-form">
+
+      <div class="input-group">
+
+        <label
+          for="editFirstName"
+          id="editFirstNameLabel">
+
+          First Name
+
+        </label>
+
+        <input
+          type="text"
+          id="editFirstName"
+          required />
+
+      </div>
+
+      <div class="input-group">
+
+        <label
+          for="editLastName"
+          id="editLastNameLabel">
+
+          Last Name
+
+        </label>
+
+        <input
+          type="text"
+          id="editLastName"
+          required />
+
+      </div>
+
+      <div class="input-group">
+
+        <label
+          for="editPhone"
+          id="editPhoneLabel">
+
+          Phone
+
+        </label>
+
+        <input
+          type="text"
+          id="editPhone"
+          required />
+
+      </div>
+
+      <div class="edit-btn-row">
+
+        <button
+          type="submit"
+          class="small-btn"
+          id="saveChangesBtn">
+
+          Save Changes
+
+        </button>
+
+        <button
+          type="button"
+          id="cancelEditBtn"
+          class="small-btn cancel-btn">
+
+          Cancel
+
+        </button>
+
+      </div>
+
+    </form>
+
+    <p
+      id="editProfileMessage"
+      class="message">
+    </p>
+
+  </div>
+
+</section>
+
+      <!-- ===================================================== -->
+      <!-- SOCIETIES SECTION -->
+      <!-- ===================================================== -->
+      <section id="societiesSection" class="hidden">
+        <div class="profile-card">
+          <div class="profile-card-top">
+            <h2 id="societyManagementTitle">Society Management</h2>
+          </div>
+
+          <!-- Admin create/edit form -->
+          <div id="societyFormCard" class="society-form-card hidden">
+            <h3 id="societyFormTitle">Create Society</h3>
+
+            <form id="societyForm" class="edit-profile-form">
+              <input type="hidden" id="societyId" />
+
+              <div class="input-group">
+                <label for="societyName" id="societyNameLabel">Society Name</label>
+                <input type="text" id="societyName" required />
+              </div>
+
+              <div class="input-group">
+                <label for="societyAddress" id="societyAddressLabel">Address</label>
+                <input type="text" id="societyAddress" required />
+              </div>
+
+              <div class="input-group">
+                <label for="societyCity" id="societyCityLabel">City</label>
+                <input type="text" id="societyCity" required />
+              </div>
+
+              <div class="input-group">
+                <label for="societyState" id="societyStateLabel">State</label>
+                <input type="text" id="societyState" required />
+              </div>
+
+              <div class="input-group">
+                <label for="societyPincode" id="societyPincodeLabel">Pincode</label>
+                <input type="text" id="societyPincode" required />
+              </div>
+
+              <div class="input-group">
+                <label for="societyStatus" id="societyStatusLabel">Status</label>
+                <select id="societyStatus" required>
+                  <option value="active">active</option>
+                  <option value="inactive">inactive</option>
+                </select>
+              </div>
+
+              <div class="edit-btn-row">
+                <button type="submit" class="small-btn" id="saveSocietyBtn">Save Society</button>
+                <button type="button" class="small-btn cancel-btn" id="cancelSocietyBtn">Cancel</button>
+              </div>
+            </form>
+
+            <p id="societyFormMessage" class="message"></p>
+          </div>
+
+          <!-- Admin create button -->
+          <div id="societyActions" class="society-actions hidden">
+            <button id="showCreateSocietyBtn" class="small-btn">+ Create Society</button>
+          </div>
+
+          <p id="societyAccessMessage" class="message"></p>
+
+          <!-- Society list -->
+          <div id="societyList" class="society-list"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- BLOCKS SECTION -->
+      <!-- ===================================================== -->
+      <section id="blocksSection" class="hidden">
+        <div class="profile-card">
+          <div class="profile-card-top">
+            <h2 id="blockManagementTitle">Block Management</h2>
+          </div>
+
+          <!-- Admin create/edit form -->
+          <div id="blockFormCard" class="society-form-card hidden">
+            <h3 id="blockFormTitle">Create Block</h3>
+
+            <form id="blockForm" class="edit-profile-form">
+              <input type="hidden" id="blockId" />
+
+              <div class="input-group">
+                <label for="blockName" id="blockNameLabel">Block Name</label>
+                <input type="text" id="blockName" required />
+              </div>
+
+              <div class="input-group">
+                <label for="blockSocietyId" id="blockSocietyIdLabel">Society ID</label>
+                <input type="number" id="blockSocietyId" required />
+              </div>
+
+              <div class="edit-btn-row">
+                <button type="submit" class="small-btn" id="saveBlockBtn">Save Block</button>
+                <button type="button" class="small-btn cancel-btn" id="cancelBlockBtn">Cancel</button>
+              </div>
+            </form>
+
+            <p id="blockFormMessage" class="message"></p>
+          </div>
+
+          <!-- Admin create button -->
+          <div id="blockActions" class="society-actions hidden">
+            <button id="showCreateBlockBtn" class="small-btn">+ Create Block</button>
+          </div>
+
+          <p id="blockAccessMessage" class="message"></p>
+
+          <!-- Block list -->
+          <div id="blockList" class="society-list"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- FLATS SECTION -->
+      <!-- ===================================================== -->
+      <section id="flatsSection" class="hidden">
+        <div class="profile-card">
+          <div class="profile-card-top">
+            <h2 id="flatManagementTitle">Flat Management</h2>
+          </div>
+
+          <!-- Admin create/edit form -->
+          <div id="flatFormCard" class="society-form-card hidden">
+            <h3 id="flatFormTitle">Create Flat</h3>
+
+            <form id="flatForm" class="edit-profile-form">
+              <input type="hidden" id="flatId" />
+
+              <div class="input-group">
+                <label for="flatNumber" id="flatNumberLabel">Flat Number</label>
+                <input type="text" id="flatNumber" required />
+              </div>
+
+              <div class="input-group">
+                <label for="flatFloorNumber" id="flatFloorNumberLabel">Floor Number</label>
+                <input type="number" id="flatFloorNumber" required />
+              </div>
+
+              <div class="input-group">
+                <label for="flatBlockId" id="flatBlockIdLabel">Block ID</label>
+                <input type="number" id="flatBlockId" required />
+              </div>
+
+              <div class="edit-btn-row">
+                <button type="submit" class="small-btn" id="saveFlatBtn">Save Flat</button>
+                <button type="button" class="small-btn cancel-btn" id="cancelFlatBtn">Cancel</button>
+              </div>
+            </form>
+
+            <p id="flatFormMessage" class="message"></p>
+          </div>
+
+          <!-- Admin create button -->
+          <div id="flatActions" class="society-actions hidden">
+            <button id="showCreateFlatBtn" class="small-btn">+ Create Flat</button>
+          </div>
+
+          <p id="flatAccessMessage" class="message"></p>
+
+          <!-- Flat list -->
+          <div id="flatList" class="society-list"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- RESIDENT-FLAT MAPPING SECTION -->
+      <!-- Placeholder for upcoming task -->
+      <!-- ===================================================== -->
+<!-- ===================================================== -->
+<!-- RESIDENT-FLAT MAPPING SECTION -->
+<!-- ===================================================== -->
+<section id="residentMappingSection" class="hidden">
+  <div class="profile-card">
+    <div class="profile-card-top">
+      <h2 id="residentMappingTitle">Resident to Flat Mapping</h2>
+    </div>
+
+    <!-- Admin create form -->
+    <div id="residentMappingFormCard" class="society-form-card hidden">
+      <h3 id="residentMappingFormTitle">Create Resident Mapping</h3>
+
+      <form id="residentMappingForm" class="edit-profile-form">
+        <div class="input-group">
+          <label for="mappingUserId">Resident User ID</label>
+          <input type="number" id="mappingUserId" required />
+        </div>
+
+        <div class="input-group">
+          <label for="mappingSocietyId">Society ID</label>
+          <input type="number" id="mappingSocietyId" required />
+        </div>
+
+        <div class="input-group">
+          <label for="mappingBlockId">Block ID</label>
+          <input type="number" id="mappingBlockId" required />
+        </div>
+
+        <div class="input-group">
+          <label for="mappingFlatId">Flat ID</label>
+          <input type="number" id="mappingFlatId" required />
+        </div>
+
+        <div class="edit-btn-row">
+          <button type="submit" class="small-btn" id="residentMappingSaveBtn">Save Mapping</button>
+          <button type="button" class="small-btn cancel-btn" id="cancelResidentMappingBtn">Cancel</button>
+        </div>
+      </form>
+
+      <p id="residentMappingFormMessage" class="message"></p>
+    </div>
+
+    <!-- Admin create button -->
+    <div id="residentMappingActions" class="society-actions hidden">
+      <button id="showCreateResidentMappingBtn" class="small-btn">+ Create Resident Mapping</button>
+    </div>
+
+    <p id="residentMappingAccessMessage" class="message"></p>
+
+    <!-- Resident mapping list -->
+    <div id="residentMappingList" class="society-list"></div>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- EMERGENCY CONTACTS SECTION -->
+<!-- ===================================================== -->
+<section id="emergencyContactsSection" class="hidden">
+  <div class="profile-card">
+    <div class="profile-card-top">
+      <h2 id="emergencyContactsSectionTitle">Emergency Contacts</h2>
+    </div>
+
+    <!-- create/edit form -->
+    <div id="emergencyContactFormCard" class="society-form-card hidden">
+      <h3 id="emergencyContactFormTitle">Add Emergency Contact</h3>
+
+      <form id="emergencyContactForm" class="edit-profile-form">
+        <input type="hidden" id="emergencyContactId" />
+
+        <div class="input-group">
+          <label for="contactResidentUserId" id="contactResidentUserIdLabel">Resident User ID</label>
+          <input type="number" id="contactResidentUserId" required />
+        </div>
+
+        <div class="input-group">
+          <label for="contactName" id="contactNameLabel">Contact Name</label>
+          <input type="text" id="contactName" required />
+        </div>
+
+        <div class="input-group">
+          <label for="contactRelationship" id="contactRelationshipLabel">Relationship</label>
+          <input type="text" id="contactRelationship" required />
+        </div>
+
+        <div class="input-group">
+          <label for="contactPhone" id="contactPhoneLabel">Phone</label>
+          <input type="text" id="contactPhone" required />
+        </div>
+
+        <div class="input-group">
+          <label for="contactEmail" id="contactEmailLabel">Email</label>
+          <input type="email" id="contactEmail" />
+        </div>
+
+        <div class="input-group">
+          <label for="contactPriority" id="contactPriorityLabel">Priority Order</label>
+          <input type="number" id="contactPriority" required />
+        </div>
+
+        <div class="edit-btn-row">
+          <button type="submit" class="small-btn" id="saveContactBtn">Save Contact</button>
+          <button type="button" class="small-btn cancel-btn" id="cancelEmergencyContactBtn">Cancel</button>
+        </div>
+      </form>
+
+      <p id="emergencyContactFormMessage" class="message"></p>
+    </div>
+
+    <div id="emergencyContactActions" class="society-actions hidden">
+      <button id="showCreateEmergencyContactBtn" class="small-btn">+ Add Emergency Contact</button>
+    </div>
+
+    <p id="emergencyContactAccessMessage" class="message"></p>
+
+    <div id="emergencyContactList" class="society-list"></div>
+  </div>
+  <div id="otpVerifyCard" class="profile-card hidden" style="margin-top: 16px;">
+  <div class="profile-card-top">
+    <h2 id="otpVerifyTitle">Verify Contact OTP</h2>
+  </div>
+
+  <form id="otpVerifyForm" class="edit-profile-form">
+    <input type="hidden" id="otpEmergencyContactId" />
+
+    <div class="input-group">
+      <label for="otpValue" id="otpValueLabel">Enter OTP</label>
+      <input type="text" id="otpValue" required />
+    </div>
+
+    <div class="edit-btn-row">
+      <button type="submit" class="small-btn" id="verifyOtpBtn">Verify OTP</button>
+      <button type="button" id="cancelOtpBtn" class="small-btn cancel-btn">Cancel</button>
+    </div>
+  </form>
+
+  <p id="otpMessage" class="message"></p>
+</div>
+</section>
+
+<!-- ===================================================== -->
+<!-- CONTACT VERIFICATION SECTION -->
+<!-- ===================================================== -->
+<section id="contactVerificationSection" class="hidden">
+  <div class="profile-card">
+    <div class="profile-card-top">
+      <h2 id="contactVerificationTitle">Contact Verification (Mock OTP)</h2>
+    </div>
+
+    <p id="contactVerificationSubtitle" class="page-subtitle" style="margin-bottom: 16px;">
+      Generate OTP for an emergency contact and verify it to mark the contact as verified.
+    </p>
+
+    <!-- Generate OTP card -->
+    <div class="profile-card" style="margin-bottom: 16px;">
+      <div class="profile-card-top">
+        <h3 id="generateOtpTitle">Generate OTP</h3>
+      </div>
+
+      <form id="generateOtpForm" class="edit-profile-form">
+        <div class="input-group">
+          <label for="generateOtpContactId" id="generateOtpContactIdLabel">Emergency Contact ID</label>
+          <input type="number" id="generateOtpContactId" required />
+        </div>
+
+        <div class="edit-btn-row">
+          <button type="submit" class="small-btn" id="generateOtpBtn">Generate OTP</button>
+        </div>
+      </form>
+
+      <p id="generateOtpMessage" class="message"></p>
+    </div>
+
+    <!-- Verify OTP card -->
+    <div class="profile-card">
+      <div class="profile-card-top">
+        <h3 id="verifyOtpTitle">Verify OTP</h3>
+      </div>
+
+      <form id="verifyOtpForm" class="edit-profile-form">
+        <div class="input-group">
+          <label for="verifyOtpContactId" id="verifyOtpContactIdLabel">Emergency Contact ID</label>
+          <input type="number" id="verifyOtpContactId" required />
+        </div>
+
+        <div class="input-group">
+          <label for="verifyOtpValue" id="verifyOtpValueLabel">OTP</label>
+          <input type="text" id="verifyOtpValue" required />
+        </div>
+
+        <div class="edit-btn-row">
+          <button type="submit" class="small-btn" id="verifyOtpFormBtn">Verify OTP</button>
+        </div>
+      </form>
+
+      <p id="verifyOtpMessage" class="message"></p>
+    </div>
+  </div>
+</section>
+
+
+<section id="alertsSection" class="content-section hidden">
+  <div class="section-header">
+    <h2 id="alertsSectionTitle">Alerts / SOS</h2>
+    <p id="alertsSectionSubtitle">Raise emergency alerts and view all alert records.</p>
+  </div>
+
+  <div class="alerts-wrapper">
+    <div class="alert-form-card">
+      <h3 id="createAlertTitle">Create Emergency Alert</h3>
+
+      <form id="alertForm" class="alert-form">
+        <div class="form-group">
+          <label for="alertUserId" id="alertUserIdLabel">User ID</label>
+          <input type="number" id="alertUserId" placeholder="Enter user ID" required />
+        </div>
+
+        <div class="form-group">
+          <label for="alertType" id="alertTypeLabel">Alert Type</label>
+          <select id="alertType" required>
+            <option value="">Select alert type</option>
+            <option value="Fire">Fire</option>
+            <option value="Medical">Medical</option>
+            <option value="Security">Security</option>
+            <option value="Accident">Accident</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="alertMessage" id="alertMessageLabel">Message</label>
+          <textarea id="alertMessage" placeholder="Enter alert message" required></textarea>
+        </div>
+
+        <div class="alert-btn-row">
+          <button type="submit" class="alert-submit-btn" id="createAlertBtn">Create Alert</button>
+          <button type="button" id="refreshAlertsBtn" class="alert-refresh-btn"><span id="refreshAlertsBtnText">Refresh Alerts</span></button>
+        </div>
+
+        <p id="alertFormMessage" class="alert-form-message"></p>
+      </form>
+    </div>
+
+    <div class="alert-list-card">
+      <h3 id="emergencyAlertsSectionTitle">Emergency Alerts</h3>
+      <div id="alertsList" class="alerts-list"></div>
+    </div>
+  </div>
+</section>
+
+      <!-- ===================================================== -->
+      <!-- ROLE & ACCESS SECTION -->
+      <!-- Placeholder for upcoming RBAC task -->
+      <!-- ===================================================== -->
+<section id="roleAccessSection" class="content-section hidden">
+  <div class="section-header">
+    <h2 id="roleAccessSectionTitle">Role & Access</h2>
+    <p id="roleAccessSectionSubtitle">View users with roles and assign/update user roles.</p>
+  </div>
+
+  <div class="role-access-wrapper">
+    <div class="role-form-card">
+      <h3 id="assignRoleTitle">Assign / Update Role</h3>
+
+      <form id="roleAssignForm" class="role-form">
+        <div class="form-group">
+          <label for="roleUserId" id="roleUserIdLabel">User ID</label>
+          <input type="number" id="roleUserId" placeholder="Enter user ID" required />
+        </div>
+
+        <div class="form-group">
+          <label for="roleIdInput" id="roleIdInputLabel">Role ID</label>
+          <input type="number" id="roleIdInput" placeholder="Enter role ID" required />
+        </div>
+
+        <div class="role-btn-row">
+          <button type="submit" class="role-submit-btn" id="assignRoleBtn">Assign Role</button>
+          <button type="button" id="refreshRolesBtn" class="role-refresh-btn"><span id="refreshRolesBtnText">Refresh</span></button>
+        </div>
+
+        <p id="roleAssignMessage" class="role-form-message"></p>
+      </form>
+
+      <div class="role-help-box">
+        <h4 id="roleReferenceTitle">Role ID Reference</h4>
+        <p><strong>1</strong> - Resident</p>
+        <p><strong>2</strong> - Guardian</p>
+        <p><strong>3</strong> - Volunteer</p>
+        <p><strong>4</strong> - Security</p>
+        <p><strong>5</strong> - Admin</p>
+      </div>
+    </div>
+
+    <div class="role-list-card">
+      <h3 id="roleListTitle">Users & Assigned Roles</h3>
+      <div id="roleAccessList" class="role-list"></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="sosSection" class="hidden">
+
+    <div class="profile-card">
+
+        <div class="profile-card-top">
+            <h2 id="sosSectionTitle">SOS Alert System</h2>
+            <p id="sosSectionSubtitle">Raise emergency SOS and monitor alerts.</p>
+        </div>
+
+        <!-- Resident SOS Form -->
+        <div id="sosCreateCard" class="profile-card">
+
+            <h3 id="createSosTitle">Create SOS Alert</h3>
+
+            <form id="sosForm" class="edit-profile-form">
+
+                <div class="input-group">
+                    <label id="sosResidentIdLabel">Resident ID</label>
+                    <input
+                        type="number"
+                        id="sosResidentId"
+                        placeholder="Resident ID"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label id="sosEmergencyTypeLabel">Emergency Type</label>
+
+                    <select id="sosEmergencyType">
+
+                        <option value="Medical">Medical</option>
+
+                        <option value="Fire">Fire</option>
+
+                        <option value="Security">Security</option>
+
+                        <option value="Fall Accident">Fall Accident</option>
+
+                        <option value="Other">Other</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+    <label id="sosMessageLabel">Additional Information</label>
+
+    <textarea
+        id="sosMessage"
+        rows="4"
+        placeholder="Describe the emergency (Optional)"
+    ></textarea>
+
+</div>
+
+<div class="input-group">
+
+    <label id="peopleCountLabel">People Involved</label>
+
+    <input
+        type="number"
+        id="peopleCount"
+        placeholder="Number of people involved"
+    >
+
+</div>
+
+  <div class="input-group">
+
+      <label id="needAmbulanceLabel">Need Ambulance?</label>
+
+      <select id="needAmbulance">
+
+          <option>No</option>
+
+          <option>Yes</option>
+
+      </select>
+
+        </div>
+
+                <button
+                    type="submit"
+                    class="small-btn"
+                    id="sendSosBtn"
+                >
+                    🚨 SEND SOS
+                </button>
+
+            </form>
+
+            <p id="sosMessageBox" class="message"></p>
+
+        </div>
+
+        <hr>
+
+        <h3 id="allSosAlertsTitle">All SOS Alerts</h3>
+
+        <button
+            id="refreshSOSBtn"
+            class="small-btn"
+        >
+            <span id="refreshSosBtnText">Refresh</span>
+        </button>
+
+        <div id="sosList">
+
+            Loading...
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- M3 - INCIDENT MANAGEMENT -->
+<!-- ===================================================== -->
+<section id="incidentSection" class="hidden">
+
+  <div class="profile-card">
+
+    <div class="profile-card-top">
+      <div>
+        <h2 id="incidentManagementTitle">Incident Management</h2>
+        <p id="incidentManagementSubtitle">Monitor and manage the complete emergency lifecycle.</p>
+      </div>
+
+      <button id="refreshIncidentsBtn" class="small-btn">
+        <span id="refreshIncidentsBtnText">Refresh</span>
+      </button>
+    </div>
+
+    <div id="incidentList">
+      Loading incidents...
+    </div>
+
+  </div>
+
+  <div id="incidentDetailsCard" class="profile-card hidden">
+
+    <div class="profile-card-top">
+      <h2 id="incidentDetailsTitle">Incident Details</h2>
+    </div>
+
+    <div id="incidentDetails">
+      <span id="incidentDetailsPlaceholder">Select an incident to view details.</span>
+    </div>
+
+    <div class="edit-btn-row" style="margin-top:20px;">
+
+      <button id="markInProgressBtn" class="small-btn">
+        <span id="assistanceStartedBtn">Assistance Started</span>
+      </button>
+
+      <button id="resolveIncidentBtn" class="small-btn">
+        <span id="resolveIncidentBtnText">Resolve</span>
+      </button>
+
+      <button id="closeIncidentBtn" class="small-btn">
+        <span id="closeIncidentBtnText">Close Incident</span>
+      </button>
+
+    </div>
+
+    <p id="incidentMessage" class="message"></p>
+
+  </div>
+
+  <div id="timelineCard" class="profile-card hidden">
+
+    <div class="profile-card-top">
+      <h2 id="incidentTimelineTitle">Incident Timeline</h2>
+    </div>
+
+    <div id="incidentTimeline">
+      <span id="incidentTimelinePlaceholder">No timeline available.</span>
+    </div>
+
+  </div>
+
+  <div id="incidentClosure"></div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- M3 - ESCALATION STATUS -->
+<!-- ===================================================== -->
+
+<section id="escalationSection" class="hidden">
+
+  <div class="profile-card">
+
+    <div class="profile-card-top">
+      <h2 id="escalationSectionTitle">Guardian Escalation Status</h2>
+    </div>
+
+    <p id="escalationSectionSubtitle">
+      Monitor automatic escalation from Guardian/Security
+      to Volunteers and Emergency Contacts.
+    </p>
+
+    <div class="input-group" style="margin-top:20px;">
+      <label>Incident ID</label>
+
+      <input
+        type="number"
+        id="escalationIncidentId"
+        placeholder="Enter Incident ID"
+      >
+    </div>
+
+    <div class="edit-btn-row">
+
+      <button id="checkEscalationBtn" class="small-btn">
+        <span id="checkEscalationBtnText">Check Status</span>
+      </button>
+
+      <button id="startEscalationBtn" class="small-btn">
+        <span id="startEscalationBtnText">Start Escalation</span>
+      </button>
+
+      <button id="nextEscalationBtn" class="small-btn">
+        <span id="nextEscalationBtnText">Next Level</span>
+      </button>
+
+    </div>
+
+    <p id="escalationMessage" class="message"></p>
+
+  </div>
+
+
+  <div id="escalationStatusCard" class="profile-card hidden">
+
+    <h3 id="currentEscalationTitle">Current Escalation</h3>
+
+    <div id="escalationStatus">
+      <span id="noEscalationSelectedText">No escalation selected.</span>
+    </div>
+
+    <h3 id="escalationLogsTitle" style="margin-top:20px;">
+      Escalation Logs
+    </h3>
+
+    <div id="escalationLogs">
+      <span id="noEscalationLogsText">No escalation logs.</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- M3 - VOLUNTEER RESPONSE -->
+<!-- ===================================================== -->
+
+<section id="volunteerSection" class="hidden">
+
+  <div class="profile-card">
+
+    <div class="profile-card-top">
+      <h2 id="volunteerAvailabilityTitle">Volunteer Availability</h2>
+    </div>
+
+    <p id="volunteerAvailabilitySubtitle">
+      Set volunteer availability for emergency requests.
+    </p>
+
+    <div class="input-group" style="margin-top:20px;">
+
+      <label id="volunteerIdLabel">Volunteer ID</label>
+
+      <input
+        type="number"
+        id="volunteerId"
+        placeholder="Volunteer User ID"
+      >
+
+    </div>
+
+    <div class="edit-btn-row">
+
+      <button id="volunteerOnlineBtn" class="small-btn">
+        <span id="volunteerOnlineBtnText">🟢 ONLINE</span>
+      </button>
+
+      <button id="volunteerOfflineBtn" class="small-btn cancel-btn">
+        <span id="volunteerOfflineBtnText">⚫ OFFLINE</span>
+      </button>
+
+    </div>
+
+    <p id="volunteerAvailabilityMessage" class="message"></p>
+
+  </div>
+
+
+  <div class="profile-card">
+
+    <div class="profile-card-top">
+
+      <h2 id="emergencyRequestTitle">Emergency Request</h2>
+
+    </div>
+
+    <div class="input-group">
+
+      <label>Incident ID</label>
+
+      <input
+        type="number"
+        id="volunteerIncidentId"
+        placeholder="Incident ID"
+      >
+
+    </div>
+
+    <div class="edit-btn-row">
+
+      <button id="loadAssignmentBtn" class="small-btn">
+        <span id="loadAssignmentBtnText">Load Assignment</span>
+      </button>
+
+      <button id="autoAssignBtn" class="small-btn">
+        <span id="autoAssignBtnText">Auto Assign</span>
+      </button>
+
+    </div>
+
+    <div
+      id="volunteerAssignment"
+      style="margin-top:20px;"
+    >
+      <span id="volunteerAssignmentPlaceholder">No assigned incident loaded.</span>
+    </div>
+
+    <div
+      id="volunteerResponseButtons"
+      class="edit-btn-row hidden"
+      style="margin-top:20px;"
+    >
+
+      <button id="acceptIncidentBtn" class="small-btn">
+        <span id="acceptIncidentBtnText">ACCEPT REQUEST</span>
+      </button>
+
+      <button id="rejectIncidentBtn" class="small-btn cancel-btn">
+        <span id="rejectIncidentBtnText">DECLINE</span>
+      </button>
+
+    </div>
+
+    <p id="volunteerResponseMessage" class="message"></p>
+
+  </div>
+
+</section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

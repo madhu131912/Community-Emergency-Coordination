@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEPi Signup</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <h1 class="project-title">CEPi</h1>
+      <p class="subtitle">Community Emergency Platform</p>
+
+      <h2>Sign Up</h2>
+
+      <form id="signupForm">
+        <div class="input-group">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" placeholder="Enter first name" required />
+        </div>
+
+        <div class="input-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" placeholder="Enter last name" required />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter email" required />
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" placeholder="Enter phone number" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required />
+        </div>
+
+        <div class="input-group">
+          <label for="role_id">Role</label>
+          <select id="role_id" required>
+            <option value="">Select role</option>
+            <option value="1">Resident</option>
+            <option value="2">Volunteer</option>
+            <option value="3">Guardian</option>
+            <option value="4">Security</option>
+            <option value="5">Admin</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="society_id">Society ID</label>
+          <input type="number" id="society_id" placeholder="Enter society id (Resident only)" />
+        </div>
+
+        <div class="input-group">
+          <label for="block_id">Block ID</label>
+          <input type="number" id="block_id" placeholder="Enter block id (Resident only)" />
+        </div>
+
+        <div class="input-group">
+          <label for="flat_id">Flat ID</label>
+          <input type="number" id="flat_id" placeholder="Enter flat id (Resident only)" />
+        </div>
+
+        <button type="submit" class="btn-primary">Create Account</button>
+      </form>
+
+      <p id="signupMessage" class="message"></p>
+
+      <p class="switch-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/signup.js"></script>
+</body>
+</html>
